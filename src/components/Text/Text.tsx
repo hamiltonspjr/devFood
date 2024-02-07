@@ -39,7 +39,7 @@ type TextVariants =
   | 'paragraphSmall'
   //| 'paragraphMedium'
   //| 'paragraphLarge'
-  //| 'subtitleSmall'
+  | 'subtitleSmall'
   //| 'subtitleLarge'
   | 'headingSmall';
 //| 'headingMedium'
@@ -49,6 +49,10 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphSmall: {
     fontSize: 12,
     lineHeight: 16,
+  },
+  subtitleSmall: {
+    fontSize: 20,
+    lineHeight: 28,
   },
   headingSmall: {
     fontSize: 32,
