@@ -12,6 +12,7 @@ const palette = {
   slate800: '#1E293B',
   slate900: '#0F172A',
   lime400: '#A3E635',
+  logo: '#D1F593',
 };
 
 export const theme = createTheme({
@@ -19,8 +20,10 @@ export const theme = createTheme({
     ...palette,
     primary: palette.lime400,
     background: palette.slate900,
+    logo: palette.logo,
   },
   spacing: {
+    s0: 0,
     s4: 4,
     s8: 8,
     s10: 10,
