@@ -5,6 +5,7 @@ import {useAppTheme} from '../../hooks/useAppTheme';
 import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
 import {KeyboardAvoidingView, Platform, ViewStyle} from 'react-native';
 import {IconName} from '../Icon/Icon';
+import {ScreenHeader} from './components/ScreenHeader';
 
 export interface ScreenProps extends BoxProps {
   children: React.ReactNode;
@@ -16,6 +17,8 @@ export interface ScreenProps extends BoxProps {
 export function Screen({
   children,
   style,
+  title,
+  icon,
   scrollable = false,
   ...boxProps
 }: ScreenProps) {
@@ -39,6 +42,7 @@ export function Screen({
             style,
           ]}
           {...boxProps}>
+          <ScreenHeader icon={icon} title={title} />
           {children}
         </Box>
       </Container>
