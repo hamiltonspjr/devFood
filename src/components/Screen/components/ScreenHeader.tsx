@@ -5,9 +5,9 @@ import {SimpleLogo} from '../../../brand/SimpleLogo';
 import {Text} from '../../Text/Text';
 import {Icon} from '../../Icon/Icon';
 
-type Props = Pick<ScreenProps, 'title' | 'icon'>;
+type Props = Pick<ScreenProps, 'title' | 'icon' | 'cartQuantityItems'>;
 
-export function ScreenHeader({title, icon}: Props) {
+export function ScreenHeader({title, icon, cartQuantityItems}: Props) {
   return (
     <Box
       flexDirection="row"
@@ -25,7 +25,26 @@ export function ScreenHeader({title, icon}: Props) {
           </Text>
         </Box>
       )}
-      {icon && <Icon name={icon} size={24} />}
+      {cartQuantityItems && icon && (
+        <Box alignItems="center" position="relative">
+          <Box
+            position="absolute"
+            backgroundColor="lime300"
+            width={16}
+            height={16}
+            borderRadius="s16"
+            alignItems="center"
+            justifyContent="center"
+            zIndex={1}
+            left={12}
+            bottom={16}>
+            <Text preset="paragraphSmall" bold color="background">
+              {cartQuantityItems}
+            </Text>
+          </Box>
+          <Icon name={icon} size={24} />
+        </Box>
+      )}
     </Box>
   );
 }

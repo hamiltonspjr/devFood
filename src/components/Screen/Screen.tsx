@@ -12,6 +12,7 @@ export interface ScreenProps extends BoxProps {
   scrollable?: boolean;
   title?: string;
   icon?: IconName;
+  cartQuantityItems?: string;
 }
 
 export function Screen({
@@ -20,6 +21,7 @@ export function Screen({
   title,
   icon,
   scrollable = false,
+  cartQuantityItems,
   ...boxProps
 }: ScreenProps) {
   const {top, bottom} = useAppSafeArea();
@@ -42,7 +44,11 @@ export function Screen({
             style,
           ]}
           {...boxProps}>
-          <ScreenHeader icon={icon} title={title} />
+          <ScreenHeader
+            icon={icon}
+            title={title}
+            cartQuantityItems={cartQuantityItems}
+          />
           {children}
         </Box>
       </Container>

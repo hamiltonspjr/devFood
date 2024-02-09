@@ -37,7 +37,7 @@ export function Text({
 type TextVariants =
   //| 'caption'
   | 'paragraphSmall'
-  //| 'paragraphMedium'
+  | 'paragraphMedium'
   //| 'paragraphLarge'
   | 'subtitleSmall'
   //| 'subtitleLarge'
@@ -49,6 +49,10 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphSmall: {
     fontSize: 12,
     lineHeight: 16,
+  },
+  paragraphMedium: {
+    fontSize: 16,
+    lineHeight: 24,
   },
   subtitleSmall: {
     fontSize: 20,

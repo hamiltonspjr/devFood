@@ -11,8 +11,10 @@ const palette = {
   slate700: '#334155',
   slate800: '#1E293B',
   slate900: '#0F172A',
+  lime300: '#BEF264',
   lime400: '#A3E635',
   logo: '#D1F593',
+  black: '#000000',
 };
 
 export const theme = createTheme({
@@ -38,6 +40,7 @@ export const theme = createTheme({
     s56: 56,
   },
   borderRadii: {
+    s6: 6,
     s8: 8,
     s12: 12,
     s16: 16,
