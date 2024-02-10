@@ -26,6 +26,7 @@ export const theme = createTheme({
   },
   spacing: {
     s0: 0,
+    s2: 2,
     s4: 4,
     s8: 8,
     s10: 10,
@@ -38,6 +39,7 @@ export const theme = createTheme({
     s40: 40,
     s48: 48,
     s56: 56,
+    s116: 116,
   },
   borderRadii: {
     s6: 6,

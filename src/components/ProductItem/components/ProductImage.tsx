@@ -7,6 +7,12 @@ type Props = Pick<ProductItemProps, 'thumbnail'>;
 export function ProductImage({thumbnail}: Props) {
   return (
     //../../assets/images/products/thumbnail/7.png
-    <Image source={thumbnail} resizeMode="cover" width={92} height={92} />
+    <Image
+      source={thumbnail}
+      resizeMode="cover"
+      width={92}
+      height={92}
+      borderRadius={6}
+    />
   );
 }

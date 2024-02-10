@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, TouchableOpacityBox} from '../Box/Box';
+import {Box, TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
 import {ProductImage} from './components/ProductImage';
 import {ImageProps} from 'react-native';
 import {Text} from '../Text/Text';
@@ -11,16 +11,17 @@ export interface ProductItemProps {
   id: string;
 }
 
-interface Props {
+interface Props extends TouchableOpacityBoxProps {
   item: ProductItemProps;
 }
 
-export function ProductItem({item}: Props) {
+export function ProductItem({item, ...touchableOpacityBoxProps}: Props) {
   return (
     <TouchableOpacityBox
       flexDirection="row"
       alignItems="center"
-      marginBottom="s16">
+      marginBottom="s16"
+      {...touchableOpacityBoxProps}>
       <ProductImage thumbnail={item.thumbnail} />
       <Box marginLeft="s12">
         <Text

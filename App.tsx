@@ -1,15 +1,15 @@
 import React from 'react';
 
-import {HomeScreen} from './src/screens/HomeScreen/HomeScreen';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
+import {Router} from './src/routes/Routes';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <HomeScreen />
+        <Router />
       </ThemeProvider>
     </SafeAreaProvider>
   );

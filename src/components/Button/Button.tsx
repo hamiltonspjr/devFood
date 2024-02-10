@@ -36,7 +36,7 @@ export function Button({
       {...buttonPreset.default.container}>
       <Text
         preset="paragraphMedium"
-        semiBold
+        medium
         color={buttonPreset.default.content}>
         {title}
       </Text>
