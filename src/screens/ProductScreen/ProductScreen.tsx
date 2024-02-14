@@ -56,7 +56,12 @@ export function ProductScreen(props: AppScreenProps<'ProductScreen'>) {
           mt="s56"
           onPress={handleAddToCart}
         />
-        <Button title="Voltar ao cardápio" preset="outline" mt="s8" />
+        <Button
+          title="Voltar ao cardápio"
+          preset="outline"
+          mt="s8"
+          onPress={() => navigation.navigate('HomeScreen')}
+        />
       </Box>
     </Screen>
   );

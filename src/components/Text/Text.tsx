@@ -45,7 +45,7 @@ type TextVariants =
 //| 'headingMedium'
 //| 'headingLarge';
 
-const $fontSizes: Record<TextVariants, TextStyle> = {
+export const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphSmall: {
     fontSize: 12,
     lineHeight: 16,
@@ -68,7 +68,7 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   },
 };
 
-const $fontFamily = {
+export const $fontFamily = {
   regular: 'Inter-Regular',
   medium: 'Inter-Medium',
   semiBold: 'Inter-SemiBold',

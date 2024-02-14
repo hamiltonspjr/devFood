@@ -6,7 +6,6 @@ type Props = Pick<ProductItemProps, 'thumbnail'>;
 
 export function ProductImage({thumbnail}: Props) {
   return (
-    //../../assets/images/products/thumbnail/7.png
     <Image
       source={thumbnail}
       resizeMode="cover"

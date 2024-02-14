@@ -1,13 +1,20 @@
 import React from 'react';
 import {ScreenProps} from '../Screen';
-import {Box} from '../../Box/Box';
+import {Box, TouchableOpacityBox} from '../../Box/Box';
 import {SimpleLogo} from '../../../brand/SimpleLogo';
 import {Text} from '../../Text/Text';
 import {Icon} from '../../Icon/Icon';
+import {useNavigation} from '@react-navigation/native';
 
 type Props = Pick<ScreenProps, 'title' | 'icon' | 'cartQuantityItems'>;
 
 export function ScreenHeader({title, icon, cartQuantityItems}: Props) {
+  const navigation = useNavigation();
+
+  function handleCartScreen() {
+    navigation.navigate('CartScreen');
+  }
+
   return (
     <Box
       flexDirection="row"
@@ -26,7 +33,7 @@ export function ScreenHeader({title, icon, cartQuantityItems}: Props) {
         </Box>
       )}
       {cartQuantityItems && icon && (
-        <Box alignItems="center" position="relative">
+        <TouchableOpacityBox alignItems="center" onPress={handleCartScreen}>
           <Box
             position="absolute"
             backgroundColor="lime300"
@@ -43,7 +50,7 @@ export function ScreenHeader({title, icon, cartQuantityItems}: Props) {
             </Text>
           </Box>
           <Icon name={icon} size={24} />
-        </Box>
+        </TouchableOpacityBox>
       )}
     </Box>
   );

@@ -22,7 +22,7 @@ import {useCartStore} from '../../store/cartStore';
 export function HomeScreen({navigation}: AppScreenProps<'HomeScreen'>) {
   const [category, setCategory] = useState(CATEGORIES[0]);
 
-  const sectionListRef = useRef<SectionList>(null);
+  const sectionListRef = useRef<SectionList<ProductItemProps>>(null);
 
   function handleCategoryPress(selectedCategory: string) {
     setCategory(selectedCategory);
@@ -98,7 +98,6 @@ export function HomeScreen({navigation}: AppScreenProps<'HomeScreen'>) {
           </Text>
         )}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={$sectionListStyle}
       />
     </Screen>
   );
@@ -107,8 +106,4 @@ export function HomeScreen({navigation}: AppScreenProps<'HomeScreen'>) {
 const $flatListStyle: StyleProp<ViewStyle> = {
   gap: 12,
   paddingBottom: 16,
-};
-
-const $sectionListStyle: StyleProp<ViewStyle> = {
-  paddingBottom: 100,
 };
