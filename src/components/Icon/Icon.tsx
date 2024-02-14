@@ -3,6 +3,8 @@ import {Pressable} from 'react-native';
 import {ShoppingBag} from '../../assets/icons/ShoppingBag';
 import {useAppTheme} from '../../hooks/useAppTheme';
 import {ThemeColors} from '../../theme/theme';
+import {PlusCircle} from '../../assets/icons/PlusCircle';
+import {ArrowRightCircle} from '../../assets/icons/ArrowRightCircle';
 
 export interface IconBase {
   size?: number;
@@ -49,6 +51,8 @@ export function Icon({
 
 const iconRegistry = {
   shoppingBag: ShoppingBag,
+  plusCircle: PlusCircle,
+  arrowRightCircle: ArrowRightCircle,
 };
 
 type IconType = typeof iconRegistry;

@@ -15,6 +15,7 @@ import {formatCurrency} from '../../utils/stringsUtils';
 import {Button} from '../../components/Button/Button';
 import {useCartStore} from '../../store/cartStore';
 import {useNavigation} from '@react-navigation/native';
+import {Icon} from '../../components/Icon/Icon';
 
 export function ProductScreen(props: AppScreenProps<'ProductScreen'>) {
   const id = props.route.params.productId;
@@ -55,6 +56,9 @@ export function ProductScreen(props: AppScreenProps<'ProductScreen'>) {
           preset="primary"
           mt="s56"
           onPress={handleAddToCart}
+          LeftComponent={
+            <Icon name="plusCircle" backgroundColor="primary" color="black" />
+          }
         />
         <Button
           title="Voltar ao cardápio"

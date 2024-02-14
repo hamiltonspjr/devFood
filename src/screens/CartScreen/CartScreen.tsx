@@ -10,6 +10,7 @@ import {TextInput} from '../../components/TextInput/TextInput';
 import {Button} from '../../components/Button/Button';
 import {Alert, Linking} from 'react-native';
 import {AppScreenProps} from '../../routes/navigationType';
+import {Icon} from '../../components/Icon/Icon';
 
 const $PHONE_NUMBER = '5511999999999';
 
@@ -97,7 +98,18 @@ export function CartScreen({navigation}: AppScreenProps<'CartScreen'>) {
         value={address}
         onChangeText={setAddress}
       />
-      <Button title="Enviar pedido" mt="s56" onPress={handleOrder} />
+      <Button
+        title="Enviar pedido"
+        mt="s56"
+        onPress={handleOrder}
+        RightComponent={
+          <Icon
+            name="arrowRightCircle"
+            backgroundColor="primary"
+            color="black"
+          />
+        }
+      />
       <Button
         title="Voltar ao cardápio"
         preset="outline"

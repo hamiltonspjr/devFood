@@ -18,6 +18,7 @@ import {
 } from '../../components/ProductItem/ProductItem';
 import {AppScreenProps} from '../../routes/navigationType';
 import {useCartStore} from '../../store/cartStore';
+import {HomeHeader} from './components/HomeHeader';
 
 export function HomeScreen({navigation}: AppScreenProps<'HomeScreen'>) {
   const [category, setCategory] = useState(CATEGORIES[0]);
@@ -60,11 +61,11 @@ export function HomeScreen({navigation}: AppScreenProps<'HomeScreen'>) {
   }
 
   return (
-    <Screen
-      title="Faça seu pedido"
-      icon="shoppingBag"
-      cartQuantityItems={cartQuantityItems.toString()}
-      flex={1}>
+    <Screen flex={1}>
+      <HomeHeader
+        title="Faça seu pedido"
+        cartQuantityItems={cartQuantityItems}
+      />
       <FlatList
         data={CATEGORIES}
         keyExtractor={item => item}

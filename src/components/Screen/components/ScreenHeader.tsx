@@ -1,23 +1,16 @@
 import React from 'react';
 import {ScreenProps} from '../Screen';
-import {Box, TouchableOpacityBox} from '../../Box/Box';
+import {Box} from '../../Box/Box';
 import {SimpleLogo} from '../../../brand/SimpleLogo';
 import {Text} from '../../Text/Text';
-import {Icon} from '../../Icon/Icon';
-import {useNavigation} from '@react-navigation/native';
 
-type Props = Pick<ScreenProps, 'title' | 'icon' | 'cartQuantityItems'>;
+type Props = Pick<ScreenProps, 'title'>;
 
-export function ScreenHeader({title, icon, cartQuantityItems}: Props) {
-  const navigation = useNavigation();
-
-  function handleCartScreen() {
-    navigation.navigate('CartScreen');
-  }
-
+export function ScreenHeader({title}: Props) {
   return (
     <Box
       flexDirection="row"
+      flex={1}
       alignItems="center"
       justifyContent="space-between"
       borderBottomWidth={title ? 1 : 0}
@@ -31,26 +24,6 @@ export function ScreenHeader({title, icon, cartQuantityItems}: Props) {
             {title}
           </Text>
         </Box>
-      )}
-      {cartQuantityItems && icon && (
-        <TouchableOpacityBox alignItems="center" onPress={handleCartScreen}>
-          <Box
-            position="absolute"
-            backgroundColor="lime300"
-            width={16}
-            height={16}
-            borderRadius="s16"
-            alignItems="center"
-            justifyContent="center"
-            zIndex={1}
-            left={12}
-            bottom={16}>
-            <Text preset="paragraphSmall" bold color="background">
-              {cartQuantityItems}
-            </Text>
-          </Box>
-          <Icon name={icon} size={24} />
-        </TouchableOpacityBox>
       )}
     </Box>
   );

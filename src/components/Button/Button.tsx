@@ -1,31 +1,32 @@
 import React from 'react';
-import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
+import {Box, TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
 import {buttonPresets} from './buttonPresets';
 import {Text} from '../Text/Text';
 
-// 1 definir os presets do botão
 export type buttonPreset = 'primary' | 'outline' | 'category';
-// 2 criar uma interface com as propriedades do botão extendendo as propriedades do TouchableOpacityBox
+
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
   preset?: buttonPreset;
   isSelected?: boolean;
+  RightComponent?: React.ReactElement;
+  LeftComponent?: React.ReactElement;
 }
 
-// 5 criar o componente do botão recebendo as propriedades do ButtonProps
 export function Button({
   title,
   preset = 'primary',
   isSelected,
+  RightComponent,
+  LeftComponent,
   ...touchableOpacityBoxProps
 }: ButtonProps) {
-  // pegar os presets com base na escolha recebida
   const buttonPreset = buttonPresets[preset];
 
-  // retornar o componente
   return (
     <TouchableOpacityBox
       paddingHorizontal="s16"
+      flexDirection="row"
       height={48}
       alignItems="center"
       justifyContent="center"
@@ -34,12 +35,14 @@ export function Button({
       borderColor={isSelected && preset === 'category' ? 'lime300' : undefined}
       {...touchableOpacityBoxProps}
       {...buttonPreset.default.container}>
+      {LeftComponent && <Box marginRight="s8">{LeftComponent}</Box>}
       <Text
         preset="paragraphMedium"
         medium
         color={buttonPreset.default.content}>
         {title}
       </Text>
+      {RightComponent && <Box marginLeft="s8">{RightComponent}</Box>}
     </TouchableOpacityBox>
   );
 }
