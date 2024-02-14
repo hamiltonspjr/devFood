@@ -40,4 +40,5 @@ O aplicativo utiliza as seguintes tecnologias:
 ## Autor
 
 Hamilton de Souza
+<br>
 <a href="https://www.linkedin.com/in/hamilton-de-souza/" target="_blank"><img src="https://img.shields.io/badge/Linkedin-blue?style=for-the-badge&logo=Linkedin"></a>
