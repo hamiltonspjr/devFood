@@ -14,7 +14,7 @@ O DevFood oferece as seguintes funcionalidades:
 
 ## Demonstração
 
-<img src="./src/github/demonstration.gif">
+<img src="./src/github/demonstration.gif" width="200px" height="200px">
 
 ## Instalação
 
