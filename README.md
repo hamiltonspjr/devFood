@@ -37,8 +37,8 @@ O aplicativo utiliza as seguintes tecnologias:
 - Async-storage
 - Zustand
 
-## Autor
+## Contato
 
-Hamilton de Souza
+Entre em contato comigo através do linkedin clicando no botão abaixo:
 <br>
 <a href="https://www.linkedin.com/in/hamilton-de-souza/" target="_blank"><img src="https://img.shields.io/badge/Linkedin-blue?style=for-the-badge&logo=Linkedin"></a>
